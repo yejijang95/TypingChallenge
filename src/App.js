@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import LINES from "./data.js";
+import React, { useState, useEffect } from "react";
+
+const setNewSentence = () => {
+  const idx = Math.floor(Math.random() * LINES.length);
+  console.log(LINES[idx]);
+  return LINES[idx];
+};
 
 function App() {
+  const [sentence, setSentence] = useState(setNewSentence());
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>{sentence}</div>
+      <textarea />
     </div>
   );
 }
+/*
+TIMER TO SEE WHERE THEY ARE
+HIGHLIGHTER OR FONT COLOR CHANGE TO SHOW WHICH POSITION THEY ARE IN
+CACULATE THE TYPING SPEED
+STYLING AT END
+*/
 
 export default App;

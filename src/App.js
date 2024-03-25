@@ -1,12 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
-import lines from "./data.js";
+import LINES from "./data.js";
 import React, { useState, useEffect } from "react";
 
 const setNewSentence = () => {
-  const idx = Math.floor(Math.random() * lines.length);
-  console.log(lines[idx]);
-  return lines[idx];
+  const idx = Math.floor(Math.random() * LINES.length);
+  console.log(LINES[idx]);
+  return LINES[idx];
 };
 
 function App() {
@@ -14,8 +14,15 @@ function App() {
   return (
     <div className="App">
       <div>{sentence}</div>
+      <textarea />
     </div>
   );
 }
+/*
+TIMER TO SEE WHERE THEY ARE
+HIGHLIGHTER OR FONT COLOR CHANGE TO SHOW WHICH POSITION THEY ARE IN
+CACULATE THE TYPING SPEED
+STYLING AT END
+*/
 
 export default App;
